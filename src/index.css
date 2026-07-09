@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-background: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #393939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #bac9cc;
+  --color-outline: #849396;
+  --color-outline-variant: #3b494c;
+  --color-primary: #c3f5ff;
+  --color-on-primary: #00363d;
+  --color-primary-container: #00e5ff;
+  --color-on-primary-container: #00626e;
+  --color-secondary: #ffdf9e;
+  --color-on-secondary: #3f2e00;
+  --color-secondary-container: #fabd00;
+  --color-on-secondary-container: #6a4e00;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-primary-fixed-dim: #00daf3;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #131313;
+}
+::-webkit-scrollbar-thumb {
+  background: #353534;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Custom slider styles to override default browser inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #00e5ff;
+  cursor: pointer;
+  margin-top: -6px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  border: 1px solid #ffffff;
+  transition: transform 0.1s ease, background-color 0.2s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: #ffffff;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #353534;
+  border-radius: 2px;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Grid background for simulation area */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Flow animation for magnetic field lines */
+@keyframes flow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes flow-reverse {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 24; }
+}
+
+.field-line {
+  stroke-dasharray: 8, 4;
+  animation: flow 2.5s linear infinite;
+}
+
+.field-line-reverse {
+  stroke-dasharray: 8, 4;
+  animation: flow-reverse 2.5s linear infinite;
+}
+
+/* Current charge flow animation in circuits */
+@keyframes charge-flow {
+  from { stroke-dashoffset: 30; }
+  to { stroke-dashoffset: 0; }
+}
+
+.charge-line {
+  stroke-dasharray: 6, 9;
+  animation: charge-flow 1.5s linear infinite;
+}
+
+/* Soft technical glow effect */
+.electric-glow {
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.active-glow {
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.6);
+}
+
+/* Enhanced magnet styling matches */
+.magnet-n-color { fill: #ff4d4d; }
+.magnet-s-color { fill: #4d4dff; }
+.magnet-text-n { fill: #ffb4ab; }
+.magnet-text-s { fill: #9cf0ff; }

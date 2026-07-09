@@ -1,0 +1,6 @@
+{
+  "name": "EM-SIM PRO",
+  "description": "An interactive physics laboratory simulation featuring electromagnetic fields and dynamic circuit analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
